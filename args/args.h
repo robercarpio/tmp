@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/13 15:42:56 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/20 21:11:40 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 #include "../aux/aux.h"
 
-void	index_counter(int *count, char *str);
+int		index_counter(char **args);
 void	allocate_args(char ***dest, char **src);
+t_stack args_to_stack(char **args);
+t_list	*args_to_list(char **args);
 
 #endif

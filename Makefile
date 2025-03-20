@@ -9,8 +9,16 @@ SRCS = main.c \
 	   aux/ft_substr.c \
 	   aux/free_split.c \
 	   aux/array_length.c \
+	   aux/only_chars_allowed.c \
+	   aux/sig_count.c \
+	   aux/ft_atoi.c \
 	   args/index_counter.c \
 	   args/allocate_args.c \
+	   args/args_to_stack.c \
+	   args/args_to_list.c \
+	   parse/char_checker.c \
+	   parse/void_checker.c \
+	   parse/sig_checker.c \
 
 NAME = push_swap
 CC = cc

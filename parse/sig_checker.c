@@ -1,51 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index_counter.c                                    :+:      :+:    :+:   */
+/*   sig_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 17:47:53 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/20 20:20:25 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/20 19:35:48 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/20 20:05:49 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#include "parse.h"
 
-
-int	index_counter(char **args)
+int	sig_checker(char **args)
 {
-	int		count;
 	int		i;
 	int		j;
 	char	**split;
-
+	int		b;
+	int		count;
+	
+	b = 1;
 	i = 0;
-	count = 0;
-	while (args[i])
+	while (args[i] && b == 1)
 	{
 		j = 0;
 		split = ft_split(args[i],' ');
-		while (split[j])
+		while (split[j] && b == 1)
 		{
-			count++;
+			count = sig_count(split[j]);
+			if (!((count == 1 && (split[i][0] == '-' || split[i][0] == '+') && (split[i][1] >= 48
+			&& split[i][1] <= 57)) || (count == 0 && (split[i][0] >= 48
+			&& split[i][0] <= 57))))
+			{
+				b = 0;	
+			}
 			j++;
 		}
+		free_split(split);
 		i++;
 	}
-	return (count);
+	return (b);
 }
-// void	index_counter(int *count, char *str)
-// {
-// 	char	**split;
-// 	int		i;
-
-// 	split = ft_split(str, ' ');
-// 	i = 0;
-// 	while (split[i])
-// 	{
-// 		i++;
-// 		(*count)++;
-// 	}
-// 	free_split(split);
-// }
