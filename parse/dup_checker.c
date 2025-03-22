@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   dup_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 21:13:21 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/22 19:22:10 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/22 17:28:35 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/22 17:34:13 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "parse.h"
 
-int	main(int argc, char *argv[])
+int	dup_checker(t_list *node)
 {
-	if (argc >= 2)
+	int	b;
+	
+	b = 1;
+	while (node && b == 1)
 	{
-		t_list	*node;
-		t_stack	stack_a;
-		t_stack	stack_b;
-		
-		argv++;
-		stack_a = args_to_stack(args_to_list(argv));
-		stack_b = create_stack();
+		if (find_dup_value(node))
+			b = 0;
+		node = node->next;
 	}
-	else
-	{
-		printf("Error: argumentos insuficientes\n");
-	}
-	return (0);
+	return(b);
 }

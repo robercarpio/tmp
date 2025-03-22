@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/21 17:46:03 by rober            ###   ########.fr       */
+/*   Updated: 2025/03/22 19:25:34 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int		array_length(char **arr);
 int		only_chars_allowed(char *str, char *allow);
 int		sig_count(char *str);
 int		ft_atoi(char *nptr);
-int 		list_size(t_list *list);
+int		list_size(t_list *list);
+int		find_dup_value(t_list *node);
+t_stack	create_stack(void);
 
 #endif

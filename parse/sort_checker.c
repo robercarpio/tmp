@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 21:13:21 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/22 19:22:10 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/22 17:44:40 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/22 18:44:25 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "parse.h"
 
-int	main(int argc, char *argv[])
+int	sort_checker(t_list *node)
 {
-	if (argc >= 2)
+	int	b;
+	int	val;
+
+	val = node->value;
+	node = node->next;
+	b = 0;
+	while (node && b == 0)
 	{
-		t_list	*node;
-		t_stack	stack_a;
-		t_stack	stack_b;
-		
-		argv++;
-		stack_a = args_to_stack(args_to_list(argv));
-		stack_b = create_stack();
+		if(val > node->value)
+			b = 1;
+		val = node->value;
+		node = node->next;
 	}
-	else
-	{
-		printf("Error: argumentos insuficientes\n");
-	}
-	return (0);
+	return(b);
 }

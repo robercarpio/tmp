@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 21:13:21 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/22 19:22:10 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/22 19:02:55 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/22 19:04:11 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "aux.h"
 
-int	main(int argc, char *argv[])
+t_stack	create_stack(void)
 {
-	if (argc >= 2)
-	{
-		t_list	*node;
-		t_stack	stack_a;
-		t_stack	stack_b;
-		
-		argv++;
-		stack_a = args_to_stack(args_to_list(argv));
-		stack_b = create_stack();
-	}
-	else
-	{
-		printf("Error: argumentos insuficientes\n");
-	}
-	return (0);
+	t_stack	stack;
+
+	stack.head = NULL;
+	stack.size = 0;
+	stack.tail = NULL;
+	return(stack);
 }

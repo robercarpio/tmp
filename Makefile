@@ -13,6 +13,8 @@ SRCS = main.c \
 	   aux/sig_count.c \
 	   aux/ft_atoi.c \
 	   aux/list_size.c \
+	   aux/find_dup_value.c \
+	   aux/create_stack.c \
 	   args/index_counter.c \
 	   args/allocate_args.c \
 	   args/args_to_stack.c \
@@ -20,6 +22,8 @@ SRCS = main.c \
 	   parse/char_checker.c \
 	   parse/void_checker.c \
 	   parse/sig_checker.c \
+	   parse/dup_checker.c \
+	   parse/sort_checker.c \
 
 NAME = push_swap
 CC = cc
