@@ -12,6 +12,7 @@ SRCS = main.c \
 	   aux/only_chars_allowed.c \
 	   aux/sig_count.c \
 	   aux/ft_atoi.c \
+	   aux/list_size.c \
 	   args/index_counter.c \
 	   args/allocate_args.c \
 	   args/args_to_stack.c \

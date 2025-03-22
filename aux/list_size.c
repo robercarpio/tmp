@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_to_stack.c                                    :+:      :+:    :+:   */
+/*   list_size.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 20:09:08 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/21 18:06:46 by rober            ###   ########.fr       */
+/*   Created: 2025/03/21 17:44:33 by rober             #+#    #+#             */
+/*   Updated: 2025/03/21 19:38:26 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#include "aux.h"
 
-t_stack args_to_stack(t_list *list)
+int list_size(t_list *list)
 {
-	t_stack stack;
-	int	i;
+      int   i;
 
-	i = 0;
-	stack.size = list_size(list);
-	while (list)
-	{
-		if (i == 0)
-			stack.head = list;
-		if (i == stack.size)
-			stack.tail = list;
-		list = list->next;
-		i++;
-	}
-	return (stack);
+      i = 0;
+      while (list)
+      {
+            list = list->next;
+            i++;
+      }
+      return (i);
 }
-
-//head cuando el contador sea 0
-//tail cuando el contador sea igual index counter
