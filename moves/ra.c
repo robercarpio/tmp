@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/22 19:50:06 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/23 17:33:54 by rober            ###   ########.fr       */
+/*   Created: 2025/03/23 19:17:48 by rober             #+#    #+#             */
+/*   Updated: 2025/03/23 19:33:24 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "moves.h"
 
-void	sa(t_stack *stack_a)
+void  ra(t_stack *stack_a)
 {
 	t_list	*first;
 	t_list	*second;
-		
+	t_list	*last;
+	
 	if (!stack_a->head || stack_a->head->value == stack_a->tail->value)
-		return ;
+		return;
 	first = stack_a->head;
-	second = stack_a->head->next;
-	first->next = second->next;
-	if (second->next)
-		second->next->prev = first;
-	second->prev = NULL;
-	second->next = first;
+	second = first->next;
+	last = stack_a->tail;
 	stack_a->head = second;
-	first->prev = second;
-	write (1,"sa\n",3);
+	stack_a->head->prev = NULL;
+	last->next = first;
+	stack_a->tail = first;
+	first ->next = NULL;
+	first->prev = last;
+	write(1,"ra\n",3);
 }

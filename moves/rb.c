@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/22 19:50:06 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/23 17:33:54 by rober            ###   ########.fr       */
+/*   Created: 2025/03/23 19:33:34 by rober             #+#    #+#             */
+/*   Updated: 2025/03/23 20:08:13 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "moves.h"
 
-void	sa(t_stack *stack_a)
+void	rb(t_stack *stack_b)
 {
 	t_list	*first;
 	t_list	*second;
-		
-	if (!stack_a->head || stack_a->head->value == stack_a->tail->value)
+	t_list	*last;
+	
+	if (!stack_b->head || stack_b->head->value == stack_b->tail->value)
 		return ;
-	first = stack_a->head;
-	second = stack_a->head->next;
-	first->next = second->next;
-	if (second->next)
-		second->next->prev = first;
-	second->prev = NULL;
-	second->next = first;
-	stack_a->head = second;
-	first->prev = second;
-	write (1,"sa\n",3);
+	first = stack_b->head;
+	second = first->next;
+	last = stack_b->tail;
+	stack_b->head = second;
+	stack_b->head->prev = NULL;
+	last->next = first;
+	stack_b->tail = first;
+	first ->next = NULL;
+	first->prev = last;
+	write(1,"rb\n",3);
 }

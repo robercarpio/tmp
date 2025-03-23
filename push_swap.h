@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:41 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/20 19:16:25 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/23 17:37:04 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 #include "./aux/aux.h"
 #include "./args/args.h"
 #include "./parse/parse.h"
+#include "./moves/moves.h"
 
 #endif

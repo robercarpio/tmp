@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/22 19:50:06 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/23 17:33:54 by rober            ###   ########.fr       */
+/*   Created: 2025/03/23 20:38:51 by rober             #+#    #+#             */
+/*   Updated: 2025/03/23 20:43:27 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "moves.h"
 
-void	sa(t_stack *stack_a)
+void	rra(t_stack *stack_a)
 {
-	t_list	*first;
-	t_list	*second;
-		
+	t_list	*first;	
+	t_list	*last;
+	
 	if (!stack_a->head || stack_a->head->value == stack_a->tail->value)
 		return ;
 	first = stack_a->head;
-	second = stack_a->head->next;
-	first->next = second->next;
-	if (second->next)
-		second->next->prev = first;
-	second->prev = NULL;
-	second->next = first;
-	stack_a->head = second;
-	first->prev = second;
-	write (1,"sa\n",3);
+	last = stack_a->tail;
+	stack_a->tail = last->prev;
+	stack_a->tail->next = NULL;
+	last->prev = NULL;
+	last->next = first;
+	stack_a->head->prev = last;
+	stack_a->head = last;
+	write(1,"rra\n",4);
 }

@@ -24,6 +24,17 @@ SRCS = main.c \
 	   parse/sig_checker.c \
 	   parse/dup_checker.c \
 	   parse/sort_checker.c \
+	   moves/sa.c \
+	   moves/sb.c \
+	   moves/ss.c \
+	   moves/pa.c \
+	   moves/pb.c \
+	   moves/ra.c \
+	   moves/rb.c \
+	   moves/rr.c \
+	   moves/rra.c \
+	   moves/rrb.c \
+	   moves/rrr.c \
 
 NAME = push_swap
 CC = cc
