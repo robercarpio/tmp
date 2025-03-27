@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args.h                                             :+:      :+:    :+:   */
+/*   args_to_arr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/27 19:03:09 by rober            ###   ########.fr       */
+/*   Created: 2025/03/26 18:29:45 by rober             #+#    #+#             */
+/*   Updated: 2025/03/26 19:01:22 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARGS_H
-# define ARGS_H
+#include "args.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+int	*args_to_array(char **args)
+{
+	int		len;
+	int		*arr;
+	int		i;
+	int		j;
+	char	**split;
+	int		x;
 
-#include "../aux/aux.h"
+	x = 0;
+	len = index_counter(args);
+	arr = malloc(len * sizeof(int));
+	i = 0;
+	while (args[i])
+	{
+		j = 0;
+		split = ft_split(args[i],' ');
+		while (split[j])
+		{
+			arr[x] = ft_atoi(split[j]);
+			x++;
+			j++;
+		}
+		i++;
+	}
 
-int		index_counter(char **args);
-void	allocate_args(char ***dest, char **src);
-t_stack args_to_stack(t_list *list);
-t_list	*args_to_list(char **args);
-int	*args_to_array(char **args);
-void	index_stack(t_stack *stack, int *arr, int arr_size);
-
-#endif
+	return (arr);
+}

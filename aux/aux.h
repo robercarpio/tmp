@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/22 19:25:34 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/27 18:48:59 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_list
 {
 	struct s_list	*prev;
 	int				value;
+	int	index;
 	struct s_list	*next;
 }	t_list;
 
@@ -49,5 +50,8 @@ int		ft_atoi(char *nptr);
 int		list_size(t_list *list);
 int		find_dup_value(t_list *node);
 t_stack	create_stack(void);
+int	max_value_stack(t_stack stack);
+int	min_value_stack (t_stack stack);
+int *sort_array(int *arr, int size);
 
 #endif

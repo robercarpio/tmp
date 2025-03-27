@@ -15,10 +15,15 @@ SRCS = main.c \
 	   aux/list_size.c \
 	   aux/find_dup_value.c \
 	   aux/create_stack.c \
+	   aux/max_value_stack.c \
+	   aux/min_value_stack.c \
+	   aux/sort_array.c \
 	   args/index_counter.c \
 	   args/allocate_args.c \
 	   args/args_to_stack.c \
 	   args/args_to_list.c \
+	   args/args_to_arr.c \
+	   args/index_stack.c \
 	   parse/char_checker.c \
 	   parse/void_checker.c \
 	   parse/sig_checker.c \

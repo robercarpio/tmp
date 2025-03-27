@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args.h                                             :+:      :+:    :+:   */
+/*   index_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/27 19:03:09 by rober            ###   ########.fr       */
+/*   Created: 2025/03/27 18:46:41 by rober             #+#    #+#             */
+/*   Updated: 2025/03/27 18:57:31 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARGS_H
-# define ARGS_H
+#include "args.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+void	index_stack(t_stack *stack, int *arr, int arr_size)
+{
+	t_list *current;
+	int i;
 
-#include "../aux/aux.h"
-
-int		index_counter(char **args);
-void	allocate_args(char ***dest, char **src);
-t_stack args_to_stack(t_list *list);
-t_list	*args_to_list(char **args);
-int	*args_to_array(char **args);
-void	index_stack(t_stack *stack, int *arr, int arr_size);
-
-#endif
+	if (!stack || !stack->head || !arr)
+		return;
+	current = stack->head;
+	while (current)
+	{
+		i = 0;
+		while (i < arr_size)
+		{
+			if (current->value == arr[i])
+			{
+				current->index = i;
+				break;
+			}
+			i++;
+		}
+		current = current->next;
+	}
+}
