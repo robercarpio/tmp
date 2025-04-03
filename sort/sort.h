@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_size.c                                        :+:      :+:    :+:   */
+/*   sort.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 17:44:33 by rober             #+#    #+#             */
-/*   Updated: 2025/03/31 18:51:39 by rober            ###   ########.fr       */
+/*   Created: 2025/03/31 18:12:35 by rober             #+#    #+#             */
+/*   Updated: 2025/04/01 20:42:34 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "aux.h"
+#ifndef SORT_H
+# define SORT_H
 
-int list_size(t_list *list)
-{
-      int   i;
+#include <stdio.h>
+#include <stdlib.h>
 
-      i = 0;
-      while (list)
-      {
-            list = list->next;
-            i++;
-      }
-      return (i);
-}
+#include "../aux/aux.h"
+#include "../moves/moves.h"
+#include "../parse/parse.h"
+
+void	sort(t_stack *stack_a, t_stack *stack_b);
+void	sort_three(t_stack *stack_a);
+void	insert_sort(t_stack *stack_a, t_stack *stack_b);
+#endif

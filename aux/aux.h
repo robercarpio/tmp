@@ -6,7 +6,7 @@
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/27 18:48:59 by rober            ###   ########.fr       */
+/*   Updated: 2025/04/03 16:57:07 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ t_stack	create_stack(void);
 int	max_value_stack(t_stack stack);
 int	min_value_stack (t_stack stack);
 int *sort_array(int *arr, int size);
+int   min_index(t_stack *node);
+int   count_r(t_list *node, int min_index);
 
 #endif

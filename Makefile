@@ -18,17 +18,21 @@ SRCS = main.c \
 	   aux/max_value_stack.c \
 	   aux/min_value_stack.c \
 	   aux/sort_array.c \
+	   aux/min_index.c \
+	   aux/count_r.c \
 	   args/index_counter.c \
 	   args/allocate_args.c \
 	   args/args_to_stack.c \
 	   args/args_to_list.c \
 	   args/args_to_arr.c \
 	   args/index_stack.c \
+	   args/init_stacks.c \
 	   parse/char_checker.c \
 	   parse/void_checker.c \
 	   parse/sig_checker.c \
 	   parse/dup_checker.c \
 	   parse/sort_checker.c \
+	   parse/parse.c \
 	   moves/sa.c \
 	   moves/sb.c \
 	   moves/ss.c \
@@ -40,6 +44,7 @@ SRCS = main.c \
 	   moves/rra.c \
 	   moves/rrb.c \
 	   moves/rrr.c \
+	   sort/ksort.c \
 
 NAME = push_swap
 CC = cc

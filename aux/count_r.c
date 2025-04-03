@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_size.c                                        :+:      :+:    :+:   */
+/*   count_r.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 17:44:33 by rober             #+#    #+#             */
-/*   Updated: 2025/03/31 18:51:39 by rober            ###   ########.fr       */
+/*   Created: 2025/04/01 19:21:38 by rober             #+#    #+#             */
+/*   Updated: 2025/04/01 20:47:01 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "aux.h"
 
-int list_size(t_list *list)
+int   count_r(t_list *node, int min_index)
 {
-      int   i;
+	int	i;
 
-      i = 0;
-      while (list)
-      {
-            list = list->next;
-            i++;
-      }
-      return (i);
+	i = 0;
+	while (node)
+	{
+		if(node->index == min_index)
+			break;
+		i++;
+		node = node->next;
+	}
+	return (i);
 }

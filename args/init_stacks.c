@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_size.c                                        :+:      :+:    :+:   */
+/*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 17:44:33 by rober             #+#    #+#             */
-/*   Updated: 2025/03/31 18:51:39 by rober            ###   ########.fr       */
+/*   Created: 2025/03/31 17:20:41 by rober             #+#    #+#             */
+/*   Updated: 2025/03/31 20:12:37 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "aux.h"
+#include "args.h"
 
-int list_size(t_list *list)
+void	init_stacks(t_stack *stack_a, t_stack *stack_b, char **args)
 {
-      int   i;
-
-      i = 0;
-      while (list)
-      {
-            list = list->next;
-            i++;
-      }
-      return (i);
+	*stack_a = args_to_stack(args_to_list(args));
+	*stack_b = create_stack();
+	index_stack(stack_a,sort_array(args_to_array(args),index_counter(args)),index_counter(args));
 }

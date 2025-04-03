@@ -3,11 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:04:49 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/22 18:10:03 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:24:55 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "parse.h"
 
+int	parse(char **args)
+{
+	t_stack	stack;
+	
+	if(char_checker(args))
+	{
+		if (sig_checker(args))
+		{
+			if (!void_checker(args))
+			{
+				stack = args_to_stack(args_to_list(args));
+				if (dup_checker(stack.head))
+				{
+					if (sort_checker(stack.head))
+						return (1);
+					else
+						return (0);
+				}
+				else
+					return (0);
+			}
+			else
+				return (0);
+		}
+		else
+			return (0);
+	}
+	else
+		return (0);
+
+}
