@@ -6,7 +6,7 @@
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 18:57:29 by rober             #+#    #+#             */
-/*   Updated: 2025/04/03 17:02:07 by rober            ###   ########.fr       */
+/*   Updated: 2025/04/17 18:23:34 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int   min_index(t_stack *stack)
 	t_list	*node;
 	int		min;
 
+	if (!stack || !stack->head)
+		return(0);
 	node = stack->head;
 	min = node->index;
 

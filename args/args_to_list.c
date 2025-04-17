@@ -6,7 +6,7 @@
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 20:58:09 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/04/16 14:41:31 by rober            ###   ########.fr       */
+/*   Updated: 2025/04/17 19:31:25 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ t_list	*add_split_to_list(char **split, t_list *tail, t_list **head)
 	{
 		new = malloc(sizeof(t_list));
 		if (!new)
-			return (free_split(split), NULL);
+		{
+			free_split(split);
+			return (NULL);
+		}
 		new->value = ft_atoi(split[j]);
 		new->next = NULL;
 		new->prev = tail;

@@ -6,7 +6,7 @@
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:04:49 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/04/16 16:58:01 by rober            ###   ########.fr       */
+/*   Updated: 2025/04/17 16:28:07 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ int	parse(char **args)
 				stack = args_to_stack(args_to_list(args));
 				if (dup_checker(stack.head))
 				{
-					if (sort_checker(stack.head))
-						return (1);
-					else
-						return (0);
+					// if (sort_checker(stack.head))
+					// 	return (1);
+					// else
+					// 	return (0);
+					return (1);
 				}
 				else
 					return (0);

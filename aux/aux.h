@@ -6,7 +6,7 @@
 /*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/04/16 16:26:48 by rober            ###   ########.fr       */
+/*   Updated: 2025/04/17 17:11:27 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int *sort_array(int *arr, int size);
 int   min_index(t_stack *node);
 int   count_r(t_list *node, int min_index);
 int   ft_sqrt(int n);
+void	free_list(t_list *head);
 void	free_stack(t_stack *stack);
 
 #endif
